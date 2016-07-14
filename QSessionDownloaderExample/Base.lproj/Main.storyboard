@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wz8-nA-JKK">
+                                <rect key="frame" x="260" y="42" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Q6F-7f-ab8"/>
+                                    <constraint firstAttribute="height" constant="80" id="qBt-ZI-D9z"/>
+                                </constraints>
+                                <state key="normal" title="开始下载">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="start1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b7m-K3-UhK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjp-Fe-KN9">
+                                <rect key="frame" x="13" y="162" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6Zz-Wc-nAh"/>
+                                    <constraint firstAttribute="height" constant="30" id="7hz-AV-xMc"/>
+                                </constraints>
+                                <state key="normal" title="继续下载"/>
+                                <connections>
+                                    <action selector="goon1" destination="BYZ-38-t0r" eventType="touchUpInside" id="XvG-HT-ogm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91G-Qv-xXO">
+                                <rect key="frame" x="270" y="162" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HEP-QD-GGN"/>
+                                    <constraint firstAttribute="width" constant="60" id="MQt-AG-CFJ"/>
+                                </constraints>
+                                <state key="normal" title="暂停下载"/>
+                                <connections>
+                                    <action selector="pause1" destination="BYZ-38-t0r" eventType="touchUpInside" id="ANn-KU-1LB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95C-JD-bEK">
+                                <rect key="frame" x="260" y="260" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Nfe-rh-hFz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Sv4-Rx-dic"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="dUp-eM-Lvs"/>
+                                    <constraint firstAttribute="height" constant="80" id="kKl-FD-akG"/>
+                                </constraints>
+                                <state key="normal" title="开始下载">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="start2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GMN-Xp-yfU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shZ-UB-md8">
+                                <rect key="frame" x="13" y="387" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Gg-eo-Zdr"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Gqp-HL-FBB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="sd8-gu-1T8"/>
+                                    <constraint firstAttribute="width" constant="60" id="ynN-ax-SKi"/>
+                                </constraints>
+                                <state key="normal" title="继续下载"/>
+                                <connections>
+                                    <action selector="goon2" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXM-uU-ldR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geF-fc-hRh">
+                                <rect key="frame" x="270" y="387" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="23o-eL-civ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="UEt-Hr-UEi"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="bRN-bk-Num"/>
+                                    <constraint firstAttribute="height" constant="30" id="dYH-w5-QFd"/>
+                                </constraints>
+                                <state key="normal" title="暂停下载"/>
+                                <connections>
+                                    <action selector="pause2" destination="BYZ-38-t0r" eventType="touchUpInside" id="6PB-7i-Uwm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYK-ce-WFU">
+                                <rect key="frame" x="527" y="387" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="fKW-Pd-QYn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="gsv-Mo-mlX"/>
+                                    <constraint firstAttribute="height" constant="30" id="r73-S7-Qor"/>
+                                    <constraint firstAttribute="width" constant="60" id="zS3-pE-1nH"/>
+                                </constraints>
+                                <state key="normal" title="取消下载"/>
+                                <connections>
+                                    <action selector="cancel2" destination="BYZ-38-t0r" eventType="touchUpInside" id="2SR-U9-JfA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0j-b4-oLc">
+                                <rect key="frame" x="527" y="162" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bdq-cU-lUX"/>
+                                    <constraint firstAttribute="width" constant="60" id="ttG-hw-IPl"/>
+                                </constraints>
+                                <state key="normal" title="取消下载"/>
+                                <connections>
+                                    <action selector="cancel1" destination="BYZ-38-t0r" eventType="touchUpInside" id="PLO-kM-oY4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wz8-nA-JKK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7PN-5q-2wX"/>
+                            <constraint firstItem="95C-JD-bEK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Tc-Ja-rMS"/>
+                            <constraint firstItem="91G-Qv-xXO" firstAttribute="top" secondItem="Wz8-nA-JKK" secondAttribute="bottom" constant="40" id="8qs-YX-mO0"/>
+                            <constraint firstItem="geF-fc-hRh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CcN-l9-pcc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z0j-b4-oLc" secondAttribute="trailing" constant="-7" id="Fif-o7-Tfv"/>
+                            <constraint firstItem="shZ-UB-md8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="LK0-lw-djQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LYK-ce-WFU" secondAttribute="trailing" constant="-7" id="N19-r6-pb2"/>
+                            <constraint firstItem="geF-fc-hRh" firstAttribute="top" secondItem="95C-JD-bEK" secondAttribute="bottom" constant="47" id="PdB-ha-dmW"/>
+                            <constraint firstItem="LYK-ce-WFU" firstAttribute="top" secondItem="Z0j-b4-oLc" secondAttribute="bottom" constant="195" id="QfG-38-42t"/>
+                            <constraint firstItem="Z0j-b4-oLc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="142" id="VKu-86-QOs"/>
+                            <constraint firstItem="Vjp-Fe-KN9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-7" id="W10-4d-ZW0"/>
+                            <constraint firstItem="Vjp-Fe-KN9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="142" id="Zmu-bd-F8J"/>
+                            <constraint firstItem="95C-JD-bEK" firstAttribute="top" secondItem="91G-Qv-xXO" secondAttribute="bottom" constant="68" id="Znw-fo-8Q6"/>
+                            <constraint firstItem="91G-Qv-xXO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gDg-gU-BhM"/>
+                            <constraint firstItem="shZ-UB-md8" firstAttribute="top" secondItem="Vjp-Fe-KN9" secondAttribute="bottom" constant="195" id="s5k-Li-GfN"/>
+                            <constraint firstItem="Wz8-nA-JKK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="vPp-eg-zoL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="389"/>
+        </scene>
+    </scenes>
+</document>
