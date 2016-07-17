@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "QDownloaderManager.h"
+#import "QSessionDownloader.h"
 
 @interface ViewController ()
 
@@ -26,7 +26,7 @@
 
 - (void)startDownloadWithURL:(NSURL *)url button:(UIButton *)button {
     
-    [[QDownloaderManager sharedManager] q_downloadWithURL:url progress:^(float progress) {
+    [[QSessionDownloader defaultDownloader] q_downloadWithURL:url progress:^(float progress) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [button q_setButtonWithProgress:progress lineWidth:10 lineColor:nil backgroundColor:[UIColor yellowColor]];
@@ -46,14 +46,14 @@
 
 - (void)pauseDownloadWithURL:(NSURL *)url {
     
-    [[QDownloaderManager sharedManager] q_pauseWithURL:url];
+    [[QSessionDownloader defaultDownloader] q_pauseWithURL:url];
 }
 
 /// 取消下载
 
 - (void)cancelDownloadWithURL:(NSURL *)url button:(UIButton *)button {
     
-    [[QDownloaderManager sharedManager] q_cancelWithURL:url];
+    [[QSessionDownloader defaultDownloader] q_cancelWithURL:url];
     
     [button q_setButtonWithProgress:0 lineWidth:10 lineColor:nil backgroundColor:[UIColor yellowColor]];
 }

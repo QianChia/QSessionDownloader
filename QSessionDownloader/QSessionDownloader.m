@@ -1,26 +1,26 @@
 //
-//  QDownloaderManager.m
+//  QSessionDownloader.m
 //  QSessionDownloader
 //
 //  Created by JHQ0228 on 16/7/14.
 //  Copyright © 2016年 QianQian-Studio. All rights reserved.
 //
 
-#import "QDownloaderManager.h"
+#import "QSessionDownloader.h"
 #import "QDownloader.h"
 
-@interface QDownloaderManager ()
+@interface QSessionDownloader ()
 
 /// 下载操作缓冲池
 @property (nonatomic, strong) NSMutableDictionary *downloadCache;
 
 @end
 
-@implementation QDownloaderManager
+@implementation QSessionDownloader
 
 /// 创建单例类对象
 
-+ (instancetype)sharedManager {
++ (instancetype)defaultDownloader {
     static id instance;
     
     static dispatch_once_t onceToken;
