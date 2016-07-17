@@ -1,15 +1,11 @@
-
 ![Logo](https://avatars3.githubusercontent.com/u/13508076?v=3&s=460)
-
 # QSessionDownloader
 
-===
 - A simple encapsulation of NSURLSession files to download.
 
 GitHub：[QianChia](https://github.com/QianChia) ｜ Blog：[QianChia(Chinese)](http://www.cnblogs.com/QianChia)
 
 ---
-
 ## Installation
 
 ### From CocoaPods
@@ -21,7 +17,6 @@ GitHub：[QianChia](https://github.com/QianChia) ｜ Blog：[QianChia(Chinese)](
 - Import the main header file：`#import "QSessionDownloader.h"`
 
 ---
-
 ## Examples
 
 - Start Download
