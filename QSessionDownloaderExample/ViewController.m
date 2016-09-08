@@ -64,10 +64,9 @@
 
 - (void)cancelDownloadWithURL:(NSURL *)url button:(UIButton *)button {
     
-    [button q_setButtonWithProgress:0 lineWidth:10 lineColor:nil backgroundColor:[UIColor yellowColor]];
-    
     [[QSessionDownloader defaultDownloader] q_cancelWithURL:url];
     
+    [button q_setButtonWithProgress:0 lineWidth:10 lineColor:nil backgroundColor:[UIColor yellowColor]];
 }
 
 /******************************************************************************************************************************/
