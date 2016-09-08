@@ -24,7 +24,10 @@
  *  @param successed    下载成功回调，主线程回调
  *  @param failed       下载失败回调，子线程回调
  */
-- (void)q_downloadWithURL:(NSURL *)url progress:(void (^)(float progress))progress successed:(void (^)(NSString *targetPath))successed failed:(void (^)(NSError *error))failed;
+- (void)q_downloadWithURL:(NSURL *)url
+                 progress:(void (^)(float progress))progress
+                successed:(void (^)(NSString *targetPath))successed
+                   failed:(void (^)(NSError *error))failed;
 
 /**
  *  暂停下载

@@ -27,6 +27,12 @@
 @property (nonatomic, strong) NSURLSession *downloadSession;
 @property (nonatomic, strong) NSURL *downloadURL;
 
+/// 是否暂停下载
+@property (nonatomic, assign) BOOL isPausedDownload;
+
+/// 是否取消下载
+@property (nonatomic, assign) BOOL isCancelDownload;
+
 @end
 
 @implementation QDownloader
@@ -51,7 +57,10 @@
 /// 开始下载
 
 - (void)q_startDownload {
-
+    
+    self.isPausedDownload = NO;
+    self.isCancelDownload = NO;
+    
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self.downloadURL.absoluteString q_appendMD5CachePath]] == NO) {
         
         self.downloadTask = [self.downloadSession downloadTaskWithURL:self.downloadURL];
@@ -68,7 +77,9 @@
 /// 暂停下载
 
 - (void)q_pauseDownload {
-
+    
+    self.isPausedDownload = YES;
+    
     [self.downloadTask cancelByProducingResumeData:^(NSData * _Nullable resumeData) {
         
         if (resumeData) {
@@ -82,6 +93,8 @@
 /// 取消下载
 
 - (void)q_cancelDownload {
+    
+    self.isCancelDownload = YES;
     
     [self.downloadTask cancel];
     self.downloadTask = nil;
@@ -127,14 +140,23 @@
     
     if (error && ![error.localizedFailureReason isEqualToString:@"No such file or directory"]) {
         
-        self.resumeData = error.userInfo[NSURLSessionDownloadTaskResumeData];
+        NSError *hError = nil;
+        
+        if (self.isPausedDownload) {
+            hError = [NSError errorWithDomain:@"UserOperation" code:-1 userInfo:@{NSLocalizedDescriptionKey: @"pauseDownload"}];
+        } else if (self.isCancelDownload) {
+            hError = [NSError errorWithDomain:@"UserOperation" code:-2 userInfo:@{NSLocalizedDescriptionKey: @"cancelDownload"}];
+        } else {
+            hError = error;
+            
+            self.resumeData = error.userInfo[NSURLSessionDownloadTaskResumeData];
+        }
         
         if (self.failedBlock) {
-            self.failedBlock(error.userInfo[NSLocalizedDescriptionKey]);
+            self.failedBlock(hError);
         }
-    }
-    
-    if ([error.localizedFailureReason isEqualToString:@"No such file or directory"]) {
+        
+    } else if ([error.localizedFailureReason isEqualToString:@"No such file or directory"]) {
         
         [[NSFileManager defaultManager] removeItemAtPath:[self.downloadURL.absoluteString q_appendMD5CachePath] error:nil];
         

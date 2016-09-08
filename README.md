@@ -24,21 +24,33 @@ GitHub：[QianChia](https://github.com/QianChia) ｜ Blog：[QianChia(Chinese)](
 	```objc
 	
     	[[QSessionDownloader defaultDownloader] q_downloadWithURL:url progress:^(float progress) {
-	        
-	        dispatch_async(dispatch_get_main_queue(), ^{
-	            [button q_setButtonWithProgress:progress lineWidth:10 lineColor:nil backgroundColor:[UIColor yellowColor]];
-	        });
-	        
-	    } successed:^(NSString *targetPath) {
-	        
-	        NSLog(@"successed：%@", targetPath);
-	        
-	    } failed:^(NSError *error) {
-	        
-	        NSLog(@"failed：%@", error);
-	    }];
+        
+        	dispatch_async(dispatch_get_main_queue(), ^{
+            	[button q_setButtonWithProgress:progress lineWidth:10 lineColor:nil backgroundColor:[UIColor yellowColor]];
+        	});
+        
+    	} successed:^(NSString *targetPath) {
+        
+        	NSLog(@"文件下载成功：%@", targetPath);
+        
+    	} failed:^(NSError *error) {
+        
+        	if ([error.userInfo[NSLocalizedDescriptionKey] isEqualToString:@"pauseDownload"]) {
+            
+            	NSLog(@"暂停下载");
+            
+        	} else if ([error.userInfo[NSLocalizedDescriptionKey] isEqualToString:@"cancelDownload"]) {
+            
+            	NSLog(@"取消下载");
+            
+        	} else {
+            
+            	NSLog(@"文件下载失败：%@", error.userInfo[NSLocalizedDescriptionKey]);
+        	}
+    	}];
     
 	```
+
 - Pause Download
 
 	```objc
